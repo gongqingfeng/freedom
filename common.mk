@@ -89,7 +89,9 @@ $(project): $(romgen) $(f)
 		-F "$(f)" \
 		-ip-vivado-tcls "$(shell find '$(BUILD_DIR)' -name '*.project.tcl')" \
 		-board "$(BOARD)" \
-		-config "$(CONFIG)" 
+		-config "$(CONFIG)"
+# -part "$(PART)"
+# -board "$(BOARD)"
 project: $(project)
 
 vivado: $(project)
