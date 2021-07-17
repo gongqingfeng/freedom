@@ -4,7 +4,7 @@ This repository contains the RTL created by SiFive for its Freedom E300 and U500
 platforms. The Ebaz4205 FPGA Board 
 implement the Freedom E300 Platform.
 
-Note: The branch [ebaz4205](https://github.com/gongqingfeng/freedom/tree/ebaz4205) is for Ebaz4205 FPGA Board. If you use Zybo Dev Kit, please switch to the branch [freedom_zybo](https://github.com/gongqingfeng/freedom/tree/freedom_zybo).
+Note: This branch [ebaz4205](https://github.com/gongqingfeng/freedom/tree/ebaz4205) is for Ebaz4205 FPGA Board. If you use Zybo Dev Kit, please switch to the branch [freedom_zybo](https://github.com/gongqingfeng/freedom/tree/freedom_zybo).
 
  ## Video:
 ![ebaz4205](./ebaz4205_gif.gif)
@@ -22,6 +22,8 @@ you may meet much trouble.
 First, you should download the repository(it may take much time. Maybe vpn need?):
 ```sh
 $ git clone --recursive https://github.com/gongqingfeng/freedom.git
+# you can also use gitee
+$ git clone --recursive https://gitee.com/gongqingfeng/freedom.git
 ```
 
 Second, you should enter the work dir like this:
@@ -76,6 +78,10 @@ $ sudo update-alternatives --config javac
 If you are not in freedom directory, please enter the dir like this:
 ```sh
 $ cd freedom
+# check branch
+git branch
+# if your branch is not ebaz4205, you should switch to branch ebaz4205
+git checkoyt ebaz4205
 ```
 
 The Makefile corresponding to the Freedom E300 Ebaz4205 FPGA Board is
@@ -93,7 +99,8 @@ $ make -f Makefile.e300ebaz4205devkit project
 $ make -f Makefile.e300ebaz4205devkit vivado
 ```
 Note1: This lab tested within vivado 2019.2.
-Note2: Before you generate bitstream, you are supposed to add the `freedom_zybo/freedom/fpga-shells/xilinx/ebaz4205/tcl/no_connect.tcl` file to your Bitstream Settings's tcl.pre blank line. Otherwise, you will get errors.
+
+Note2: Before you generate bitstream, you are supposed to add the `freedom/fpga-shells/xilinx/ebaz4205/tcl/no_connect.tcl` file to your Bitstream Settings's tcl.pre blank line. Otherwise, you will get errors.
 
 The vivado project files place under `builds/e300ebaz4205devkit` and the *.v files place under `builds/e300ebaz4205devkit/obj`.
 
